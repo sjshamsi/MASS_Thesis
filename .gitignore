@@ -1,0 +1,11 @@
+Original_Data/QSO_AGN_Blazar_sample_milliquas_roma_ps_score_pointsources.csv
+Original_Data/features_QSO_AGN_Blazar_ZTF_DR6_lcs_rband_all.csv
+Original_Data/features_QSO_AGN_Blazar_ZTF_DR6_lcs_gband_all.csv
+lightcurves_by_name_1day_binned.pkl
+lightcurves_by_name.pkl
+lightcurves_by_oid_1day_binned.pkl
+lightcurves_by_oid.pkl
+original_features_by_name.parquet
+original_features_by_oid.parquet
+*.pkl
+*.parquet
