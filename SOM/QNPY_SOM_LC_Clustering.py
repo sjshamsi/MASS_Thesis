@@ -166,7 +166,7 @@ def pad_lightcurves(lightcurve_arrays,
                                       binned_magnitudes,
                                       right=np.mean(binned_magnitudes))
         stacked_magnitudes[k] = interpolated_mags
-    return stacked_magnitudes
+    return stacked_magnitudes, time_bins
 
 
 
