@@ -133,9 +133,12 @@ def get_dmdt_histogram(lightcurve, dmagnitude_bins, dtime_bins, dmagnitude_weigh
     return hist, _dm_edges, _dt_edges
 
 
-def get_d2mdt2_histogram(dmdt_curve, d2m_bins, dt2_bins):
+def get_d2mdt2_histogram(dmdt_curve, d2m_bins, dt2_bins, dm2_weights=True):
     d2ms, d2m_errs, dt2s = return_d2ms_and_dt2s(dmdt_curve)
-    hist, _d2m_edges, _dt2_edges = get_2Dhistogram(d2ms, d2m_errs, d2m_bins, dt2s, np.zeros_like(dt2s), dt2_bins)
+    dt2_errs = None
+    d2m_errs = d2m_errs if dm2_weights else None
+
+    hist, _d2m_edges, _dt2_edges = get_2Dhistogram(d2ms, d2m_bins, dt2s, dt2_bins, quantity1_errs=d2m_errs, quantity2_errs=dt2_errs)
     return hist, _d2m_edges, _dt2_edges
 
 
@@ -228,15 +231,20 @@ def draw_single_channel_dmdt_histogram(ax, histogram, band, dm_bins, dt_bins, cb
 
 # The following functions are used to plot lightcurves and thier derivatives
 #------------------------------------------------------------------------------
-def draw_timeseries(ax, band, time_array, y_array, y_err_array=None):
+def draw_timeseries(ax, band, time_array, y_array, y_err_array=None, **kwargs):
     if y_err_array is None:
-        ax.scatter(time_array, y_array, '.', c=band, alpha=0.5, label=f'ZTF ${band}$ Band')
+        if 'color' not in kwargs:
+            kwargs['color'] = band
+        ax.scatter(time_array, y_array, '.', alpha=0.5, label=f'ZTF ${band}$ Band', **kwargs)
     else:
-        ax.errorbar(time_array, y_array, y_err_array, fmt='.', elinewidth=0.5, markersize=5, ecolor=band, c=band, alpha=0.5, label=f'ZTF ${band}$ Band')
+        if 'color' not in kwargs:
+            kwargs['color'] = band
+            kwargs['ecolor'] = band
+        ax.errorbar(time_array, y_array, y_err_array, fmt='.', elinewidth=0.5, markersize=5, alpha=0.5, label=f'ZTF ${band}$ Band', **kwargs)
     return ax
 
-def draw_lightcurve(ax, band, lightcurve):
-    ax = draw_timeseries(ax=ax, band=band, time_array=lightcurve[:, 0], y_array=lightcurve[:, 1], y_err_array=lightcurve[:, 2])
+def draw_lightcurve(ax, band, lightcurve, **kwargs):
+    ax = draw_timeseries(ax=ax, band=band, time_array=lightcurve[:, 0], y_array=lightcurve[:, 1], y_err_array=lightcurve[:, 2], **kwargs)
     ax.set_xlabel('MJD', size=14)
     ax.set_ylabel('Magnitude', size=14)
     ax.invert_yaxis()
@@ -244,9 +252,9 @@ def draw_lightcurve(ax, band, lightcurve):
     ax.legend(fontsize=14)
     return ax
 
-def draw_dmdt_curve(ax, band, timeseries):
-    ax = draw_timeseries(ax=ax, band=band, time_array=timeseries[:, 0], y_array=timeseries[:, 1], y_err_array=timeseries[:, 2])
-    ax.set_xlabel('MJD', size=14)
+def draw_dmdt_curve(ax, band, timeseries, **kwargs):
+    ax = draw_timeseries(ax=ax, band=band, time_array=timeseries[:, 0], y_array=timeseries[:, 1], y_err_array=timeseries[:, 2], **kwargs)
+    ax.set_xlabel('MJD', size=14)   
     ax.set_ylabel('$\\frac{dM}{dt}$ [Rate of Change in Magnitude]', size=14)
     ax.tick_params(axis='both', labelsize=12)
     ax.legend(fontsize=14)
@@ -260,12 +268,106 @@ def differentiate_1D(x_arr, y_arr, yerr_arr):
     dyerr_arr = np.empty_like(dy_arr)
     for i in range(1, len(dy_arr) - 1):
         hd, hs = x_arr[i + 1] - x_arr[i], x_arr[i] - x_arr[i - 1]
+        
         dy_err_squared = ((hs / (hd * (hd + hs))) * yerr_arr[i + 1])**2 + (((hd - hs) / (hd * hs)) * yerr_arr[i])**2 + ((hd / (hs * (hd + hs))) * yerr_arr[i - 1])**2
         dyerr_arr[i] = np.sqrt(dy_err_squared)
     
-    dyerr_arr[0] = (1 / (x_arr[1] - x_arr[0])) * np.sqrt(yerr_arr[0]**2 + yerr_arr[1]**2)
-    dyerr_arr[-1] = (1 / (x_arr[-1] - x_arr[-2])) * np.sqrt(yerr_arr[-1]**2 + yerr_arr[-2]**2)
+    dyerr_arr[0] = np.sqrt((yerr_arr[1]**2 + yerr_arr[0]**2) / (x_arr[1] - x_arr[0])**2)
+    dyerr_arr[-1] = np.sqrt((yerr_arr[-1]**2 + yerr_arr[-2]**2) / (x_arr[-1] - x_arr[-2])**2)
     return x_arr, dy_arr, dyerr_arr
+
+
+def differentiate_1D_manual(x_arr, y_arr, yerr_arr):
+    dy_arr, dyerr_arr = np.zeros_like(y_arr), np.zeros_like(yerr_arr)
+
+    for i in range(1, len(x_arr) - 1):
+        hd, hs = x_arr[i + 1] - x_arr[i], x_arr[i] - x_arr[i - 1]
+
+        dy = (y_arr[i] * (hd - hs) / (2 * hd * hs)) + (y_arr[i + 1] / (2 * hd)) - (y_arr[i - 1] / (2 * hs))
+        dy_variance = (yerr_arr[i] * (hd - hs) / (2 * hd * hs))**2 + (yerr_arr[i + 1] / (2 * hd))**2 + (yerr_arr[i - 1] / (2 * hs))**2
+
+        dy_arr[i] = dy
+        dyerr_arr[i] = np.sqrt(dy_variance)
+
+    dy_arr[0] = (y_arr[1] - y_arr[0]) / (x_arr[1] - x_arr[0])
+    dy_arr[-1] = (y_arr[-1] - y_arr[-2]) / (x_arr[-1] - x_arr[-2])
+
+    dyerr_arr[0] = np.sqrt((yerr_arr[1]**2 + yerr_arr[0]**2) / (x_arr[1] - x_arr[0])**2)
+    dyerr_arr[-1] = np.sqrt((yerr_arr[-1]**2 + yerr_arr[-2]**2) / (x_arr[-1] - x_arr[-2])**2)
+    return x_arr, dy_arr, dyerr_arr
+
+
+def compute_derivatives_with_errors(lightcurve):
+    t, m, sigma_m = lightcurve[:, 0], lightcurve[:, 1], lightcurve[:, 2]
+
+    dm_dt = np.full_like(m, np.nan)
+    sigma_dm_dt = np.full_like(m, np.nan)
+    d2m_dt2 = np.full_like(m, np.nan)
+    sigma_d2m_dt2 = np.full_like(m, np.nan)
+
+    for i in range(1, len(t) - 1):
+        t1, t2 = t[i - 1], t[i + 1]
+        m1, m2 = m[i - 1], m[i + 1]
+        dt = t2 - t1
+        dm = m2 - m1
+
+        dm_dt[i] = dm / dt
+        sigma_m_term = (sigma_m[i - 1] ** 2 + sigma_m[i + 1] ** 2) / dt**2
+        sigma_dm_dt[i] = np.sqrt(sigma_m_term)
+    return t, dm_dt, sigma_dm_dt
+
+    for i in range(1, len(t) - 1):
+        t0, t1, t2 = t[i - 1], t[i], t[i + 1]
+        m0, m1, m2 = m[i - 1], m[i], m[i + 1]
+        
+        dt1 = t1 - t0
+        dt2 = t2 - t1
+        if dt1 <= 0 or dt2 <= 0:
+            continue
+        fwd = (m2 - m1) / dt2
+        bwd = (m1 - m0) / dt1
+        d2m_dt2[i] = 2 * (fwd - bwd) / (dt1 + dt2)
+        # Error propagation for second derivative
+        s_m = sigma_m
+        # s_t = sigma_t
+        # Variance of fwd and bwd components
+        var_fwd = (sigma_m[i+1]**2 + sigma_m[i]**2) / dt2**2
+        var_bwd = (sigma_m[i]**2 + sigma_m[i-1]**2) / dt1**2
+        sigma_d2m_dt2[i] = np.sqrt(4 * (var_fwd + var_bwd) / (dt1 + dt2)**2)
+    # return dm_dt, d2m_dt2, sigma_dm_dt, sigma_d2m_dt2
+    return t, dm_dt, sigma_dm_dt
+
+
+def differentiate_lightcurve(lightcurve):
+    time_array, mag_array, mag_err_array = lightcurve[:, 0], lightcurve[:, 1], lightcurve[:, 2]
+    time_array, dmdt_array, dmdt_err_array = differentiate_1D(x_arr=time_array, y_arr=mag_array, yerr_arr=mag_err_array)
+    
+    filter = ~np.isnan(dmdt_array) & ~np.isnan(dmdt_err_array) & ~np.isinf(dmdt_array) & ~np.isinf(dmdt_err_array) & ~(dmdt_err_array==0)
+    time_array, dmdt_array, dmdt_err_array = time_array[filter], dmdt_array[filter], dmdt_err_array[filter]
+    if time_array.size < 2: return np.nan
+    dmdt_curve = np.column_stack((time_array, dmdt_array, dmdt_err_array))
+    return dmdt_curve
+
+
+def differentiate_lightcurve_manual(lightcurve):
+    time_array, mag_array, mag_err_array = lightcurve[:, 0], lightcurve[:, 1], lightcurve[:, 2]
+    time_array, dmdt_array, dmdt_err_array = differentiate_1D_manual(x_arr=time_array, y_arr=mag_array, yerr_arr=mag_err_array)
+    
+    filter = ~np.isnan(dmdt_array) & ~np.isnan(dmdt_err_array) & ~np.isinf(dmdt_array) & ~np.isinf(dmdt_err_array) & ~(dmdt_err_array==0)
+    time_array, dmdt_array, dmdt_err_array = time_array[filter], dmdt_array[filter], dmdt_err_array[filter]
+    if time_array.size < 2: return np.nan
+    dmdt_curve = np.column_stack((time_array, dmdt_array, dmdt_err_array))
+    return dmdt_curve
+
+
+def differentiate_lightcurve_PAnew(lightcurve):
+    time_array, dmdt_array, dmdt_err_array = compute_derivatives_with_errors(lightcurve)
+    
+    filter = ~np.isnan(dmdt_array) & ~np.isnan(dmdt_err_array) & ~np.isinf(dmdt_array) & ~np.isinf(dmdt_err_array) & ~(dmdt_err_array==0)
+    time_array, dmdt_array, dmdt_err_array = time_array[filter], dmdt_array[filter], dmdt_err_array[filter]
+    if time_array.size < 2: return np.nan
+    dmdt_curve = np.column_stack((time_array, dmdt_array, dmdt_err_array))
+    return dmdt_curve
 
 
 def differentiate_lightcurve_PA(lightcurve):
