@@ -1,0 +1,587 @@
+
+************************************************************
+LOG - 2025-06-30 03:56:07
+************************************************************
+
+Input Parameters:
+save_directory:			/content/drive/MyDrive/ThesisGD/LCsByName_ImbalancedTraining_F1Metric_WeightedCrossEntropLoss_3QSOClasses/swin_base_patch4_window7_224/
+image_df_Xcol:			X_1day
+image_df_ycol:			type
+pass_if_nonempty_dir:			True
+overwrite_save_directory:			True
+train_valid_test_ratios:			(0.75, 0.15, 0.15)
+image_resize_pixels:			224
+batch_size:			32
+dataloaders:			None
+CrossEntropyLossFlat_weights:			None
+loss_function:			CrossEntropyLossFlat
+cnn_model:			swin_base_patch4_window7_224
+learner:			None
+learning_rate:			None
+epochs:			20
+freeze_epochs:			1
+CallBack_monitor:			f1_score
+CallBack_comp:			<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+Learner Summary:
+Sequential (Input shape: 32 x 3 x 224 x 224)
+============================================================================
+Layer (type)         Output Shape         Param #    Trainable 
+============================================================================
+                     32 x 128 x 56 x 56  
+Conv2d                                    6272       False     
+LayerNorm                                 256        True      
+Dropout                                                        
+LayerNorm                                 256        True      
+____________________________________________________________________________
+                     32 x 49 x 384       
+Linear                                    49536      False     
+Dropout                                                        
+Linear                                    16512      False     
+Dropout                                                        
+Softmax                                                        
+Identity                                                       
+LayerNorm                                 256        True      
+____________________________________________________________________________
+                     32 x 3136 x 512     
+Linear                                    66048      False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 3136 x 128     
+Linear                                    65664      False     
+Dropout                                                        
+LayerNorm                                 256        True      
+____________________________________________________________________________
+                     32 x 49 x 384       
+Linear                                    49536      False     
+Dropout                                                        
+Linear                                    16512      False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 256        True      
+____________________________________________________________________________
+                     32 x 3136 x 512     
+Linear                                    66048      False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 3136 x 128     
+Linear                                    65664      False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 784 x 256      
+Linear                                    131072     False     
+LayerNorm                                 512        True      
+____________________________________________________________________________
+                     32 x 49 x 768       
+Linear                                    197376     False     
+Dropout                                                        
+Linear                                    65792      False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 512        True      
+____________________________________________________________________________
+                     32 x 784 x 1024     
+Linear                                    263168     False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 784 x 256      
+Linear                                    262400     False     
+Dropout                                                        
+LayerNorm                                 512        True      
+____________________________________________________________________________
+                     32 x 49 x 768       
+Linear                                    197376     False     
+Dropout                                                        
+Linear                                    65792      False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 512        True      
+____________________________________________________________________________
+                     32 x 784 x 1024     
+Linear                                    263168     False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 784 x 256      
+Linear                                    262400     False     
+Dropout                                                        
+LayerNorm                                 2048       True      
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    524288     False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 49 x 1536      
+Linear                                    787968     False     
+Dropout                                                        
+Linear                                    262656     False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 196 x 2048     
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 196 x 512      
+Linear                                    1049088    False     
+Dropout                                                        
+LayerNorm                                 4096       True      
+____________________________________________________________________________
+                     32 x 49 x 1024      
+Linear                                    2097152    False     
+LayerNorm                                 2048       True      
+____________________________________________________________________________
+                     32 x 49 x 3072      
+Linear                                    3148800    False     
+Dropout                                                        
+Linear                                    1049600    False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 2048       True      
+____________________________________________________________________________
+                     32 x 49 x 4096      
+Linear                                    4198400    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 49 x 1024      
+Linear                                    4195328    False     
+Dropout                                                        
+LayerNorm                                 2048       True      
+____________________________________________________________________________
+                     32 x 49 x 3072      
+Linear                                    3148800    False     
+Dropout                                                        
+Linear                                    1049600    False     
+Dropout                                                        
+Softmax                                                        
+DropPath                                                       
+LayerNorm                                 2048       True      
+____________________________________________________________________________
+                     32 x 49 x 4096      
+Linear                                    4198400    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 49 x 1024      
+Linear                                    4195328    False     
+Dropout                                                        
+LayerNorm                                 2048       True      
+Identity                                                       
+BatchNorm1d                               2048       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 512            
+Linear                                    524288     True      
+ReLU                                                           
+BatchNorm1d                               1024       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 3              
+Linear                                    1536       True      
+____________________________________________________________________________
+
+Total params: 87,208,576
+Total trainable params: 586,496
+Total non-trainable params: 86,622,080
+
+Optimizer used: <function Adam at 0x7eebfc65e7a0>
+Loss function: FlattenedLoss of CrossEntropyLoss()
+
+Model frozen up to parameter group #1
+
+Callbacks:
+  - TrainEvalCallback
+  - CastToTensor
+  - Recorder
+  - ProgressCallback
+
+Final Parameters:
+save_directory:			/content/drive/MyDrive/ThesisGD/LCsByName_ImbalancedTraining_F1Metric_WeightedCrossEntropLoss_3QSOClasses/swin_base_patch4_window7_224/
+image_df_Xcol:			X_1day
+image_df_ycol:			type
+pass_if_nonempty_dir:			True
+overwrite_save_directory:			True
+train_valid_test_ratios:			(0.75, 0.15, 0.15)
+image_resize_pixels:			224
+batch_size:			32
+dataloaders:			<fastai.data.core.DataLoaders object at 0x7eea46d9ec90>
+CrossEntropyLossFlat_weights:			tensor([ 1.1877, 18.5103,  9.6113])
+loss_function:			FlattenedLoss of CrossEntropyLoss()
+cnn_model:			swin_base_patch4_window7_224
+learner:			<fastai.learner.Learner object at 0x7eea46b69890>
+learning_rate:			None
+epochs:			20
+freeze_epochs:			1
+CallBack_monitor:			f1_score
+CallBack_comp:			<ufunc 'greater'>
+
+Cross-Validation Fold Classification Report:
+              precision    recall  f1-score   support
+
+           Q       0.89      0.59      0.71      2487
+          QR       0.07      0.23      0.11       140
+          QX       0.20      0.51      0.28       332
+
+    accuracy                           0.57      2959
+   macro avg       0.39      0.44      0.37      2959
+weighted avg       0.77      0.57      0.63      2959
+
+
+Test-Set Classification Report:
+              precision    recall  f1-score   support
+
+           Q       0.89      0.58      0.70      2904
+          QR       0.09      0.25      0.14       208
+          QX       0.19      0.55      0.29       371
+
+    accuracy                           0.55      3483
+   macro avg       0.39      0.46      0.37      3483
+weighted avg       0.77      0.55      0.62      3483
+
+
+
+
+
+
