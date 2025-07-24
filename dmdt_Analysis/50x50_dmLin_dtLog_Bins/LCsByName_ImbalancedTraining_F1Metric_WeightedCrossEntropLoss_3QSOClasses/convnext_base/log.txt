@@ -1,0 +1,569 @@
+
+************************************************************
+LOG - 2025-06-30 00:44:52
+************************************************************
+
+Input Parameters:
+save_directory:			/content/drive/MyDrive/ThesisGD/LCsByName_ImbalancedTraining_F1Metric_WeightedCrossEntropLoss_3QSOClasses/convnext_base/
+image_df_Xcol:			X_1day
+image_df_ycol:			type
+pass_if_nonempty_dir:			True
+overwrite_save_directory:			True
+train_valid_test_ratios:			(0.75, 0.15, 0.15)
+image_resize_pixels:			224
+batch_size:			32
+dataloaders:			None
+CrossEntropyLossFlat_weights:			None
+loss_function:			CrossEntropyLossFlat
+cnn_model:			convnext_base
+learner:			None
+learning_rate:			None
+epochs:			20
+freeze_epochs:			1
+CallBack_monitor:			f1_score
+CallBack_comp:			<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+Learner Summary:
+Sequential (Input shape: 32 x 3 x 224 x 224)
+============================================================================
+Layer (type)         Output Shape         Param #    Trainable 
+============================================================================
+                     32 x 128 x 56 x 56  
+Conv2d                                    6272       False     
+LayerNorm2d                               256        True      
+Identity                                                       
+Conv2d                                    6400       False     
+LayerNorm                                 256        True      
+____________________________________________________________________________
+                     32 x 56 x 56 x 512  
+Linear                                    66048      False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 56 x 56 x 128  
+Linear                                    65664      False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    6400       False     
+LayerNorm                                 256        True      
+____________________________________________________________________________
+                     32 x 56 x 56 x 512  
+Linear                                    66048      False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 56 x 56 x 128  
+Linear                                    65664      False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    6400       False     
+LayerNorm                                 256        True      
+____________________________________________________________________________
+                     32 x 56 x 56 x 512  
+Linear                                    66048      False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 56 x 56 x 128  
+Linear                                    65664      False     
+Dropout                                                        
+Identity                                                       
+LayerNorm2d                               256        True      
+____________________________________________________________________________
+                     32 x 256 x 28 x 28  
+Conv2d                                    131328     False     
+Conv2d                                    12800      False     
+LayerNorm                                 512        True      
+____________________________________________________________________________
+                     32 x 28 x 28 x 1024 
+Linear                                    263168     False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 28 x 28 x 256  
+Linear                                    262400     False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    12800      False     
+LayerNorm                                 512        True      
+____________________________________________________________________________
+                     32 x 28 x 28 x 1024 
+Linear                                    263168     False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 28 x 28 x 256  
+Linear                                    262400     False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    12800      False     
+LayerNorm                                 512        True      
+____________________________________________________________________________
+                     32 x 28 x 28 x 1024 
+Linear                                    263168     False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 28 x 28 x 256  
+Linear                                    262400     False     
+Dropout                                                        
+Identity                                                       
+LayerNorm2d                               512        True      
+____________________________________________________________________________
+                     32 x 512 x 14 x 14  
+Conv2d                                    524800     False     
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    25600      False     
+LayerNorm                                 1024       True      
+____________________________________________________________________________
+                     32 x 14 x 14 x 2048 
+Linear                                    1050624    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 14 x 14 x 512  
+Linear                                    1049088    False     
+Dropout                                                        
+Identity                                                       
+LayerNorm2d                               1024       True      
+____________________________________________________________________________
+                     32 x 1024 x 7 x 7   
+Conv2d                                    2098176    False     
+Conv2d                                    51200      False     
+LayerNorm                                 2048       True      
+____________________________________________________________________________
+                     32 x 7 x 7 x 4096   
+Linear                                    4198400    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 7 x 7 x 1024   
+Linear                                    4195328    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    51200      False     
+LayerNorm                                 2048       True      
+____________________________________________________________________________
+                     32 x 7 x 7 x 4096   
+Linear                                    4198400    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 7 x 7 x 1024   
+Linear                                    4195328    False     
+Dropout                                                        
+Identity                                                       
+Conv2d                                    51200      False     
+LayerNorm                                 2048       True      
+____________________________________________________________________________
+                     32 x 7 x 7 x 4096   
+Linear                                    4198400    False     
+GELU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 7 x 7 x 1024   
+Linear                                    4195328    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+____________________________________________________________________________
+                     32 x 1024 x 1 x 1   
+AdaptiveAvgPool2d                                              
+AdaptiveMaxPool2d                                              
+____________________________________________________________________________
+                     32 x 2048           
+Flatten                                                        
+BatchNorm1d                               4096       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 512            
+Linear                                    1048576    True      
+ReLU                                                           
+BatchNorm1d                               1024       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 3              
+Linear                                    1536       True      
+____________________________________________________________________________
+
+Total params: 88,601,600
+Total trainable params: 1,093,376
+Total non-trainable params: 87,508,224
+
+Optimizer used: <function Adam at 0x7eebfc65e7a0>
+Loss function: FlattenedLoss of CrossEntropyLoss()
+
+Model frozen up to parameter group #1
+
+Callbacks:
+  - TrainEvalCallback
+  - CastToTensor
+  - Recorder
+  - ProgressCallback
+
+Final Parameters:
+save_directory:			/content/drive/MyDrive/ThesisGD/LCsByName_ImbalancedTraining_F1Metric_WeightedCrossEntropLoss_3QSOClasses/convnext_base/
+image_df_Xcol:			X_1day
+image_df_ycol:			type
+pass_if_nonempty_dir:			True
+overwrite_save_directory:			True
+train_valid_test_ratios:			(0.75, 0.15, 0.15)
+image_resize_pixels:			224
+batch_size:			32
+dataloaders:			<fastai.data.core.DataLoaders object at 0x7eebf8ee3290>
+CrossEntropyLossFlat_weights:			tensor([ 1.1877, 18.5103,  9.6113])
+loss_function:			FlattenedLoss of CrossEntropyLoss()
+cnn_model:			convnext_base
+learner:			<fastai.learner.Learner object at 0x7eebf8a0d0d0>
+learning_rate:			None
+epochs:			20
+freeze_epochs:			1
+CallBack_monitor:			f1_score
+CallBack_comp:			<ufunc 'greater'>
+
+Cross-Validation Fold Classification Report:
+              precision    recall  f1-score   support
+
+           Q       0.88      0.54      0.67      2487
+          QR       0.06      0.29      0.10       140
+          QX       0.18      0.41      0.25       332
+
+    accuracy                           0.51      2959
+   macro avg       0.37      0.41      0.34      2959
+weighted avg       0.77      0.51      0.60      2959
+
+
+Test-Set Classification Report:
+              precision    recall  f1-score   support
+
+           Q       0.88      0.54      0.67      2904
+          QR       0.11      0.42      0.17       208
+          QX       0.19      0.47      0.28       371
+
+    accuracy                           0.53      3483
+   macro avg       0.40      0.48      0.37      3483
+weighted avg       0.76      0.53      0.60      3483
+
+
+
+
+
+

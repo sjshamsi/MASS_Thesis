@@ -1,0 +1,440 @@
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/vit_base_mci_224/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		vit_base_mci_224
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+Learner Summary:
+Sequential (Input shape: 32 x 3 x 224 x 224)
+============================================================================
+Layer (type)         Output Shape         Param #    Trainable 
+============================================================================
+                     32 x 192 x 56 x 56  
+Conv2d                                    9216       False     
+Identity                                                       
+GELU                                                           
+____________________________________________________________________________
+                     32 x 192 x 28 x 28  
+Conv2d                                    147456     False     
+Identity                                                       
+GELU                                                           
+____________________________________________________________________________
+                     32 x 768 x 14 x 14  
+Conv2d                                    590592     False     
+Sequential                                                     
+Identity                                                       
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 2304     
+Linear                                    1771776    False     
+Identity                                                       
+Identity                                                       
+Linear                                    590592     False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 3072     
+Linear                                    2362368    False     
+GELU                                                           
+Dropout                                                        
+Identity                                                       
+____________________________________________________________________________
+                     32 x 197 x 768      
+Linear                                    2360064    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 2304     
+Linear                                    1771776    False     
+Identity                                                       
+Identity                                                       
+Linear                                    590592     False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 3072     
+Linear                                    2362368    False     
+GELU                                                           
+Dropout                                                        
+Identity                                                       
+____________________________________________________________________________
+                     32 x 197 x 768      
+Linear                                    2360064    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 2304     
+Linear                                    1771776    False     
+Identity                                                       
+Identity                                                       
+Linear                                    590592     False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 3072     
+Linear                                    2362368    False     
+GELU                                                           
+Dropout                                                        
+Identity                                                       
+____________________________________________________________________________
+                     32 x 197 x 768      
+Linear                                    2360064    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 2304     
+Linear                                    1771776    False     
+Identity                                                       
+Identity                                                       
+Linear                                    590592     False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 3072     
+Linear                                    2362368    False     
+GELU                                                           
+Dropout                                                        
+Identity                                                       
+____________________________________________________________________________
+                     32 x 197 x 768      
+Linear                                    2360064    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 2304     
+Linear                                    1771776    False     
+Identity                                                       
+Identity                                                       
+Linear                                    590592     False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 3072     
+Linear                                    2362368    False     
+GELU                                                           
+Dropout                                                        
+Identity                                                       
+____________________________________________________________________________
+                     32 x 197 x 768      
+Linear                                    2360064    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 2304     
+Linear                                    1771776    False     
+Identity                                                       
+Identity                                                       
+Linear                                    590592     False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 3072     
+Linear                                    2362368    False     
+GELU                                                           
+Dropout                                                        
+Identity                                                       
+____________________________________________________________________________
+                     32 x 197 x 768      
+Linear                                    2360064    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 2304     
+Linear                                    1771776    False     
+Identity                                                       
+Identity                                                       
+Linear                                    590592     False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 3072     
+Linear                                    2362368    False     
+GELU                                                           
+Dropout                                                        
+Identity                                                       
+____________________________________________________________________________
+                     32 x 197 x 768      
+Linear                                    2360064    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 2304     
+Linear                                    1771776    False     
+Identity                                                       
+Identity                                                       
+Linear                                    590592     False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 3072     
+Linear                                    2362368    False     
+GELU                                                           
+Dropout                                                        
+Identity                                                       
+____________________________________________________________________________
+                     32 x 197 x 768      
+Linear                                    2360064    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 2304     
+Linear                                    1771776    False     
+Identity                                                       
+Identity                                                       
+Linear                                    590592     False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 3072     
+Linear                                    2362368    False     
+GELU                                                           
+Dropout                                                        
+Identity                                                       
+____________________________________________________________________________
+                     32 x 197 x 768      
+Linear                                    2360064    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 2304     
+Linear                                    1771776    False     
+Identity                                                       
+Identity                                                       
+Linear                                    590592     False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 3072     
+Linear                                    2362368    False     
+GELU                                                           
+Dropout                                                        
+Identity                                                       
+____________________________________________________________________________
+                     32 x 197 x 768      
+Linear                                    2360064    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 2304     
+Linear                                    1771776    False     
+Identity                                                       
+Identity                                                       
+Linear                                    590592     False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 3072     
+Linear                                    2362368    False     
+GELU                                                           
+Dropout                                                        
+Identity                                                       
+____________________________________________________________________________
+                     32 x 197 x 768      
+Linear                                    2360064    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 2304     
+Linear                                    1771776    False     
+Identity                                                       
+Identity                                                       
+Linear                                    590592     False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+____________________________________________________________________________
+                     32 x 197 x 3072     
+Linear                                    2362368    False     
+GELU                                                           
+Dropout                                                        
+Identity                                                       
+____________________________________________________________________________
+                     32 x 197 x 768      
+Linear                                    2360064    False     
+Dropout                                                        
+Identity                                                       
+Identity                                                       
+LayerNorm                                 1536       True      
+Identity                                                       
+Dropout                                                        
+Identity                                                       
+BatchNorm1d                               1536       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 512            
+Linear                                    393216     True      
+ReLU                                                           
+BatchNorm1d                               1024       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 3              
+Linear                                    1536       True      
+____________________________________________________________________________
+
+Total params: 86,200,576
+Total trainable params: 435,712
+Total non-trainable params: 85,764,864
+
+Optimizer used: <function Adam at 0x7d2c7b77b9c0>
+Loss function: FlattenedLoss of CrossEntropyLoss()
+
+Model frozen up to parameter group #1
+
+Callbacks:
+  - TrainEvalCallback
+  - CastToTensor
+  - Recorder
+  - ProgressCallback
+
+Final Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/vit_base_mci_224/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		<fastai.data.core.DataLoaders object at 0x7d2c781e1090>
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		vit_base_mci_224
+learner:		<fastai.learner.Learner object at 0x7d2c783aa6d0>
+learning_rate:		0.015848932787775993
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+
+************************************************************
+************************************************************
+LOG - 2025-06-28 20:58:30
+************************************************************
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_ImbalancedTraining_F1Metric_WeightedCrossEntropLoss_3QSOClasses/vit_base_mci_224/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+pass_if_nonempty_dir:		False
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		vit_base_mci_224
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+
+************************************************************
+LOG - 2025-06-28 21:04:09
+************************************************************
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_ImbalancedTraining_F1Metric_WeightedCrossEntropLoss_3QSOClasses/vit_base_mci_224/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+pass_if_nonempty_dir:		False
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		vit_base_mci_224
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+

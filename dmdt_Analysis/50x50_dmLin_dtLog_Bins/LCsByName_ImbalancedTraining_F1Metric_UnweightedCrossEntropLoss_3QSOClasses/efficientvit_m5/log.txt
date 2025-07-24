@@ -1,0 +1,721 @@
+Save directory:
+/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/efficientvit_m5/
+
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+
+Learner Summary:
+Sequential (Input shape: 32 x 3 x 224 x 224)
+============================================================================
+Layer (type)         Output Shape         Param #    Trainable 
+============================================================================
+                     32 x 24 x 112 x 112 
+Conv2d                                    648        False     
+BatchNorm2d                               48         True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 48 x 56 x 56   
+Conv2d                                    10368      False     
+BatchNorm2d                               96         True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 96 x 28 x 28   
+Conv2d                                    41472      False     
+BatchNorm2d                               192        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 192 x 14 x 14  
+Conv2d                                    165888     False     
+BatchNorm2d                               384        True      
+Identity                                                       
+Conv2d                                    1728       False     
+BatchNorm2d                               384        True      
+____________________________________________________________________________
+                     32 x 384 x 14 x 14  
+Conv2d                                    73728      False     
+BatchNorm2d                               768        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 192 x 14 x 14  
+Conv2d                                    73728      False     
+BatchNorm2d                               384        True      
+____________________________________________________________________________
+                     32 x 96 x 7 x 7     
+Conv2d                                    6144       False     
+BatchNorm2d                               192        True      
+Conv2d                                    6144       False     
+BatchNorm2d                               192        True      
+Conv2d                                    6144       False     
+BatchNorm2d                               192        True      
+Conv2d                                    784        False     
+BatchNorm2d                               32         True      
+Conv2d                                    400        False     
+BatchNorm2d                               32         True      
+Conv2d                                    144        False     
+BatchNorm2d                               32         True      
+ReLU                                                           
+Conv2d                                    36864      False     
+BatchNorm2d                               384        True      
+Conv2d                                    1728       False     
+BatchNorm2d                               384        True      
+____________________________________________________________________________
+                     32 x 384 x 14 x 14  
+Conv2d                                    73728      False     
+BatchNorm2d                               768        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 192 x 14 x 14  
+Conv2d                                    73728      False     
+BatchNorm2d                               384        True      
+Conv2d                                    1728       False     
+BatchNorm2d                               384        True      
+____________________________________________________________________________
+                     32 x 384 x 14 x 14  
+Conv2d                                    73728      False     
+BatchNorm2d                               768        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 192 x 14 x 14  
+Conv2d                                    73728      False     
+BatchNorm2d                               384        True      
+____________________________________________________________________________
+                     32 x 768 x 14 x 14  
+Conv2d                                    147456     False     
+BatchNorm2d                               1536       True      
+ReLU                                                           
+Conv2d                                    6912       False     
+BatchNorm2d                               1536       True      
+____________________________________________________________________________
+                     32 x 192 x 1 x 1    
+Conv2d                                    147648     False     
+Identity                                                       
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 768 x 1 x 1    
+Conv2d                                    148224     False     
+Sigmoid                                                        
+____________________________________________________________________________
+                     32 x 288 x 7 x 7    
+Conv2d                                    221184     False     
+BatchNorm2d                               576        True      
+Conv2d                                    2592       False     
+BatchNorm2d                               576        True      
+____________________________________________________________________________
+                     32 x 576 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               1152       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 288 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               576        True      
+Conv2d                                    2592       False     
+BatchNorm2d                               576        True      
+____________________________________________________________________________
+                     32 x 576 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               1152       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 288 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               576        True      
+____________________________________________________________________________
+                     32 x 128 x 7 x 7    
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    784        False     
+BatchNorm2d                               32         True      
+Conv2d                                    400        False     
+BatchNorm2d                               32         True      
+Conv2d                                    144        False     
+BatchNorm2d                               32         True      
+ReLU                                                           
+Conv2d                                    82944      False     
+BatchNorm2d                               576        True      
+Conv2d                                    2592       False     
+BatchNorm2d                               576        True      
+____________________________________________________________________________
+                     32 x 576 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               1152       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 288 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               576        True      
+Conv2d                                    2592       False     
+BatchNorm2d                               576        True      
+____________________________________________________________________________
+                     32 x 576 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               1152       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 288 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               576        True      
+____________________________________________________________________________
+                     32 x 128 x 7 x 7    
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    784        False     
+BatchNorm2d                               32         True      
+Conv2d                                    400        False     
+BatchNorm2d                               32         True      
+Conv2d                                    144        False     
+BatchNorm2d                               32         True      
+ReLU                                                           
+Conv2d                                    82944      False     
+BatchNorm2d                               576        True      
+Conv2d                                    2592       False     
+BatchNorm2d                               576        True      
+____________________________________________________________________________
+                     32 x 576 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               1152       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 288 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               576        True      
+Conv2d                                    2592       False     
+BatchNorm2d                               576        True      
+____________________________________________________________________________
+                     32 x 576 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               1152       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 288 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               576        True      
+____________________________________________________________________________
+                     32 x 128 x 7 x 7    
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    784        False     
+BatchNorm2d                               32         True      
+Conv2d                                    400        False     
+BatchNorm2d                               32         True      
+Conv2d                                    144        False     
+BatchNorm2d                               32         True      
+ReLU                                                           
+Conv2d                                    82944      False     
+BatchNorm2d                               576        True      
+Conv2d                                    2592       False     
+BatchNorm2d                               576        True      
+____________________________________________________________________________
+                     32 x 576 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               1152       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 288 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               576        True      
+Conv2d                                    2592       False     
+BatchNorm2d                               576        True      
+____________________________________________________________________________
+                     32 x 576 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               1152       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 288 x 7 x 7    
+Conv2d                                    165888     False     
+BatchNorm2d                               576        True      
+____________________________________________________________________________
+                     32 x 1152 x 7 x 7   
+Conv2d                                    331776     False     
+BatchNorm2d                               2304       True      
+ReLU                                                           
+Conv2d                                    10368      False     
+BatchNorm2d                               2304       True      
+____________________________________________________________________________
+                     32 x 288 x 1 x 1    
+Conv2d                                    332064     False     
+Identity                                                       
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 1152 x 1 x 1   
+Conv2d                                    332928     False     
+Sigmoid                                                        
+____________________________________________________________________________
+                     32 x 384 x 4 x 4    
+Conv2d                                    442368     False     
+BatchNorm2d                               768        True      
+Conv2d                                    3456       False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 768 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               1536       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 384 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               768        True      
+Conv2d                                    3456       False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 768 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               1536       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 384 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 128 x 4 x 4    
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    784        False     
+BatchNorm2d                               32         True      
+Conv2d                                    400        False     
+BatchNorm2d                               32         True      
+Conv2d                                    144        False     
+BatchNorm2d                               32         True      
+Conv2d                                    144        False     
+BatchNorm2d                               32         True      
+ReLU                                                           
+Conv2d                                    147456     False     
+BatchNorm2d                               768        True      
+Conv2d                                    3456       False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 768 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               1536       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 384 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               768        True      
+Conv2d                                    3456       False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 768 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               1536       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 384 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 128 x 4 x 4    
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    784        False     
+BatchNorm2d                               32         True      
+Conv2d                                    400        False     
+BatchNorm2d                               32         True      
+Conv2d                                    144        False     
+BatchNorm2d                               32         True      
+Conv2d                                    144        False     
+BatchNorm2d                               32         True      
+ReLU                                                           
+Conv2d                                    147456     False     
+BatchNorm2d                               768        True      
+Conv2d                                    3456       False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 768 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               1536       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 384 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               768        True      
+Conv2d                                    3456       False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 768 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               1536       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 384 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 128 x 4 x 4    
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    784        False     
+BatchNorm2d                               32         True      
+Conv2d                                    400        False     
+BatchNorm2d                               32         True      
+Conv2d                                    144        False     
+BatchNorm2d                               32         True      
+Conv2d                                    144        False     
+BatchNorm2d                               32         True      
+ReLU                                                           
+Conv2d                                    147456     False     
+BatchNorm2d                               768        True      
+Conv2d                                    3456       False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 768 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               1536       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 384 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               768        True      
+Conv2d                                    3456       False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 768 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               1536       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 384 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 128 x 4 x 4    
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    12288      False     
+BatchNorm2d                               256        True      
+Conv2d                                    784        False     
+BatchNorm2d                               32         True      
+Conv2d                                    400        False     
+BatchNorm2d                               32         True      
+Conv2d                                    144        False     
+BatchNorm2d                               32         True      
+Conv2d                                    144        False     
+BatchNorm2d                               32         True      
+ReLU                                                           
+Conv2d                                    147456     False     
+BatchNorm2d                               768        True      
+Conv2d                                    3456       False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 768 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               1536       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 384 x 4 x 4    
+Conv2d                                    294912     False     
+BatchNorm2d                               768        True      
+____________________________________________________________________________
+                     32 x 384 x 1 x 1    
+AdaptiveAvgPool2d                                              
+AdaptiveMaxPool2d                                              
+____________________________________________________________________________
+                     32 x 768            
+Flatten                                                        
+BatchNorm1d                               1536       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 512            
+Linear                                    393216     True      
+ReLU                                                           
+BatchNorm1d                               1024       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 3              
+Linear                                    1536       True      
+____________________________________________________________________________
+
+Total params: 12,484,472
+Total trainable params: 470,800
+Total non-trainable params: 12,013,672
+
+Optimizer used: <function Adam at 0x7f925542e7a0>
+Loss function: FlattenedLoss of CrossEntropyLoss()
+
+Model frozen up to parameter group #1
+
+Callbacks:
+  - TrainEvalCallback
+  - CastToTensor
+  - Recorder
+  - ProgressCallback
+
+
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/efficientvit_m5/
+
+
+image_df_Xcol:		X_1day
+
+
+image_df_ycol:		type
+
+
+overwrite_save_directory:		False
+
+
+train_test_ratio:		0.2
+
+
+image_resize_pixels:		224
+
+
+batch_size:		32
+
+
+dataloaders:		<fastai.data.core.DataLoaders object at 0x7f8fd3ff0950>
+
+
+CrossEntropyLossFlat_weights:		None
+
+
+loss_function:		None
+
+
+cnn_model:		efficientvit_m5
+
+
+learner:		<fastai.learner.Learner object at 0x7f8fd3e19d10>
+
+
+learning_rate:		0.0014454397605732083
+
+
+epochs:		20
+
+
+freeze_epochs:		1
+
+
+CallBack_monitor:		f1_score
+
+
+CallBack_comp:		<ufunc 'greater'>
+
+
+Learner recorder values:
+[[0.5839710235595703, 0.5516740083694458, 0.8393279910087585, 0.4134858952216465, 0.335609781573289, 0.3096882920726915], [0.5783133506774902, 0.5411981344223022, 0.8384665250778198, 0.37280880880880884, 0.33587967161053706, 0.3108030204407038], [0.5617594718933105, 0.5374224185943604, 0.8391126394271851, 0.27988505747126435, 0.3330768573138411, 0.30417301011047354], [0.584581732749939, 0.6252985000610352, 0.8382511138916016, 0.27983894161633593, 0.3327348892878516, 0.3040031243897676], [0.5529282093048096, 0.79646897315979, 0.8373896479606628, 0.635495028102032, 0.33478427821392004, 0.3089625737341269]]
+
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/efficientvit_m5/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_m5
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/efficientvit_m5/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_m5
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/efficientvit_m5/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_m5
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+
+************************************************************
+************************************************************LOG - 2025-06-27 23:53:58************************************************************
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/efficientvit_m5/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_m5
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+
+************************************************************
+LOG - 2025-06-28 18:23:50
+************************************************************
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_ImbalancedTraining_F1Metric_WeightedCrossEntropLoss_3QSOClasses/efficientvit_m5/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+pass_if_nonempty_dir:		False
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_m5
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+
+************************************************************
+LOG - 2025-06-28 20:56:23
+************************************************************
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_ImbalancedTraining_F1Metric_WeightedCrossEntropLoss_3QSOClasses/efficientvit_m5/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+pass_if_nonempty_dir:		False
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_m5
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+
+************************************************************
+LOG - 2025-06-28 21:02:39
+************************************************************
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_ImbalancedTraining_F1Metric_WeightedCrossEntropLoss_3QSOClasses/efficientvit_m5/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+pass_if_nonempty_dir:		False
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_m5
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+

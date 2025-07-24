@@ -1,0 +1,559 @@
+Save directory:
+/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/efficientvit_b0/
+
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+
+Learner Summary:
+Sequential (Input shape: 32 x 3 x 224 x 224)
+============================================================================
+Layer (type)         Output Shape         Param #    Trainable 
+============================================================================
+                     32 x 3 x 224 x 224  
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 8 x 112 x 112  
+Conv2d                                    216        False     
+BatchNorm2d                               16         True      
+Hardswish                                                      
+Identity                                                       
+Dropout                                                        
+Conv2d                                    72         False     
+BatchNorm2d                               16         True      
+Hardswish                                                      
+Dropout                                                        
+Conv2d                                    64         False     
+BatchNorm2d                               16         True      
+Identity                                                       
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 32 x 112 x 112 
+Conv2d                                    256        False     
+BatchNorm2d                               64         True      
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 32 x 56 x 56   
+Conv2d                                    288        False     
+BatchNorm2d                               64         True      
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 16 x 56 x 56   
+Conv2d                                    512        False     
+BatchNorm2d                               32         True      
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 64 x 56 x 56   
+Conv2d                                    1024       False     
+BatchNorm2d                               128        True      
+Hardswish                                                      
+Dropout                                                        
+Conv2d                                    576        False     
+BatchNorm2d                               128        True      
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 16 x 56 x 56   
+Conv2d                                    1024       False     
+BatchNorm2d                               32         True      
+Identity                                                       
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 64 x 56 x 56   
+Conv2d                                    1024       False     
+BatchNorm2d                               128        True      
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 64 x 28 x 28   
+Conv2d                                    576        False     
+BatchNorm2d                               128        True      
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 32 x 28 x 28   
+Conv2d                                    2048       False     
+BatchNorm2d                               64         True      
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 128 x 28 x 28  
+Conv2d                                    4096       False     
+BatchNorm2d                               256        True      
+Hardswish                                                      
+Dropout                                                        
+Conv2d                                    1152       False     
+BatchNorm2d                               256        True      
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 32 x 28 x 28   
+Conv2d                                    4096       False     
+BatchNorm2d                               64         True      
+Identity                                                       
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 128 x 28 x 28  
+Conv2d                                    4224       False     
+Identity                                                       
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 128 x 14 x 14  
+Conv2d                                    1280       False     
+Identity                                                       
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 64 x 14 x 14   
+Conv2d                                    8192       False     
+BatchNorm2d                               128        True      
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 192 x 14 x 14  
+Conv2d                                    12288      False     
+Identity                                                       
+Identity                                                       
+Conv2d                                    4800       False     
+Conv2d                                    3072       False     
+ReLU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 64 x 14 x 14   
+Conv2d                                    8192       False     
+BatchNorm2d                               128        True      
+Identity                                                       
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 256 x 14 x 14  
+Conv2d                                    16640      False     
+Identity                                                       
+Hardswish                                                      
+Dropout                                                        
+Conv2d                                    2560       False     
+Identity                                                       
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 64 x 14 x 14   
+Conv2d                                    16384      False     
+BatchNorm2d                               128        True      
+Identity                                                       
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 192 x 14 x 14  
+Conv2d                                    12288      False     
+Identity                                                       
+Identity                                                       
+Conv2d                                    4800       False     
+Conv2d                                    3072       False     
+ReLU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 64 x 14 x 14   
+Conv2d                                    8192       False     
+BatchNorm2d                               128        True      
+Identity                                                       
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 256 x 14 x 14  
+Conv2d                                    16640      False     
+Identity                                                       
+Hardswish                                                      
+Dropout                                                        
+Conv2d                                    2560       False     
+Identity                                                       
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 64 x 14 x 14   
+Conv2d                                    16384      False     
+BatchNorm2d                               128        True      
+Identity                                                       
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 256 x 14 x 14  
+Conv2d                                    16640      False     
+Identity                                                       
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 256 x 7 x 7    
+Conv2d                                    2560       False     
+Identity                                                       
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 128 x 7 x 7    
+Conv2d                                    32768      False     
+BatchNorm2d                               256        True      
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 384 x 7 x 7    
+Conv2d                                    49152      False     
+Identity                                                       
+Identity                                                       
+Conv2d                                    9600       False     
+Conv2d                                    6144       False     
+ReLU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 128 x 7 x 7    
+Conv2d                                    32768      False     
+BatchNorm2d                               256        True      
+Identity                                                       
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 512 x 7 x 7    
+Conv2d                                    66048      False     
+Identity                                                       
+Hardswish                                                      
+Dropout                                                        
+Conv2d                                    5120       False     
+Identity                                                       
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 128 x 7 x 7    
+Conv2d                                    65536      False     
+BatchNorm2d                               256        True      
+Identity                                                       
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 384 x 7 x 7    
+Conv2d                                    49152      False     
+Identity                                                       
+Identity                                                       
+Conv2d                                    9600       False     
+Conv2d                                    6144       False     
+ReLU                                                           
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 128 x 7 x 7    
+Conv2d                                    32768      False     
+BatchNorm2d                               256        True      
+Identity                                                       
+Identity                                                       
+Identity                                                       
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 512 x 7 x 7    
+Conv2d                                    66048      False     
+Identity                                                       
+Hardswish                                                      
+Dropout                                                        
+Conv2d                                    5120       False     
+Identity                                                       
+Hardswish                                                      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 128 x 7 x 7    
+Conv2d                                    65536      False     
+BatchNorm2d                               256        True      
+Identity                                                       
+Identity                                                       
+____________________________________________________________________________
+                     32 x 128 x 1 x 1    
+AdaptiveAvgPool2d                                              
+AdaptiveMaxPool2d                                              
+____________________________________________________________________________
+                     32 x 256            
+Flatten                                                        
+BatchNorm1d                               512        True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 512            
+Linear                                    131072     True      
+ReLU                                                           
+BatchNorm1d                               1024       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 3              
+Linear                                    1536       True      
+____________________________________________________________________________
+
+Total params: 816,752
+Total trainable params: 137,456
+Total non-trainable params: 679,296
+
+Optimizer used: <function Adam at 0x7f925542e7a0>
+Loss function: FlattenedLoss of CrossEntropyLoss()
+
+Model frozen up to parameter group #1
+
+Callbacks:
+  - TrainEvalCallback
+  - CastToTensor
+  - Recorder
+  - ProgressCallback
+
+
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/efficientvit_b0/
+
+
+image_df_Xcol:		X_1day
+
+
+image_df_ycol:		type
+
+
+overwrite_save_directory:		False
+
+
+train_test_ratio:		0.2
+
+
+image_resize_pixels:		224
+
+
+batch_size:		32
+
+
+dataloaders:		<fastai.data.core.DataLoaders object at 0x7f919493f210>
+
+
+CrossEntropyLossFlat_weights:		None
+
+
+loss_function:		None
+
+
+cnn_model:		efficientvit_b0
+
+
+learner:		<fastai.learner.Learner object at 0x7f9194223b10>
+
+
+learning_rate:		0.0030199517495930195
+
+
+epochs:		20
+
+
+freeze_epochs:		1
+
+
+CallBack_monitor:		f1_score
+
+
+CallBack_comp:		<ufunc 'greater'>
+
+
+Learner recorder values:
+[[0.5451996326446533, 0.5418246388435364, 0.8360973596572876, 0.41947592754044366, 0.34395412979700196, 0.32792014232095756], [0.5320964455604553, 0.5369257926940918, 0.8382511138916016, 0.36291945103111306, 0.3337445306637929, 0.3053216309005609], [0.5615466833114624, 0.5504387021064758, 0.8326513171195984, 0.4250862033994564, 0.3440810221710327, 0.3298464507543844], [0.5325323343276978, 0.6089610457420349, 0.8384665250778198, 0.27954904495188854, 0.3332477315528163, 0.30404561074664166], [0.5810976624488831, 0.5442017912864685, 0.8386818766593933, 0.4462759462759463, 0.33391573422482695, 0.3054119061233128], [0.5201405882835388, 0.5489059686660767, 0.8388972878456116, 0.4270189115057023, 0.33982534492028055, 0.3181929059289445]]
+
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/efficientvit_b0/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_b0
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/efficientvit_b0/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_b0
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/efficientvit_b0/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_b0
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+
+************************************************************
+************************************************************LOG - 2025-06-27 23:53:55************************************************************
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/efficientvit_b0/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_b0
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+
+************************************************************
+LOG - 2025-06-28 18:23:46
+************************************************************
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_ImbalancedTraining_F1Metric_WeightedCrossEntropLoss_3QSOClasses/efficientvit_b0/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+pass_if_nonempty_dir:		False
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_b0
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+
+************************************************************
+LOG - 2025-06-28 20:56:20
+************************************************************
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_ImbalancedTraining_F1Metric_WeightedCrossEntropLoss_3QSOClasses/efficientvit_b0/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+pass_if_nonempty_dir:		False
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_b0
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+
+************************************************************
+LOG - 2025-06-28 21:02:37
+************************************************************
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_ImbalancedTraining_F1Metric_WeightedCrossEntropLoss_3QSOClasses/efficientvit_b0/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+pass_if_nonempty_dir:		False
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		efficientvit_b0
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+

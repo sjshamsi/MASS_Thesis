@@ -1,0 +1,621 @@
+Save directory:
+/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/resnet18/
+
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+
+Learner Summary:
+Sequential (Input shape: 32 x 3 x 224 x 224)
+============================================================================
+Layer (type)         Output Shape         Param #    Trainable 
+============================================================================
+                     32 x 64 x 112 x 112 
+Conv2d                                    9408       False     
+BatchNorm2d                               128        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 64 x 56 x 56   
+MaxPool2d                                                      
+Conv2d                                    36864      False     
+BatchNorm2d                               128        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    36864      False     
+BatchNorm2d                               128        True      
+ReLU                                                           
+Conv2d                                    36864      False     
+BatchNorm2d                               128        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    36864      False     
+BatchNorm2d                               128        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 128 x 28 x 28  
+Conv2d                                    73728      False     
+BatchNorm2d                               256        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    147456     False     
+BatchNorm2d                               256        True      
+ReLU                                                           
+Conv2d                                    8192       False     
+BatchNorm2d                               256        True      
+Conv2d                                    147456     False     
+BatchNorm2d                               256        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    147456     False     
+BatchNorm2d                               256        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 256 x 14 x 14  
+Conv2d                                    294912     False     
+BatchNorm2d                               512        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    589824     False     
+BatchNorm2d                               512        True      
+ReLU                                                           
+Conv2d                                    32768      False     
+BatchNorm2d                               512        True      
+Conv2d                                    589824     False     
+BatchNorm2d                               512        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    589824     False     
+BatchNorm2d                               512        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 512 x 7 x 7    
+Conv2d                                    1179648    False     
+BatchNorm2d                               1024       True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    2359296    False     
+BatchNorm2d                               1024       True      
+ReLU                                                           
+Conv2d                                    131072     False     
+BatchNorm2d                               1024       True      
+Conv2d                                    2359296    False     
+BatchNorm2d                               1024       True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    2359296    False     
+BatchNorm2d                               1024       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 512 x 1 x 1    
+AdaptiveAvgPool2d                                              
+AdaptiveMaxPool2d                                              
+____________________________________________________________________________
+                     32 x 1024           
+Flatten                                                        
+BatchNorm1d                               2048       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 512            
+Linear                                    524288     True      
+ReLU                                                           
+BatchNorm1d                               1024       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 3              
+Linear                                    1536       True      
+____________________________________________________________________________
+
+Total params: 11,705,408
+Total trainable params: 538,496
+Total non-trainable params: 11,166,912
+
+Optimizer used: <function Adam at 0x7f925542e7a0>
+Loss function: FlattenedLoss of CrossEntropyLoss()
+
+Model frozen up to parameter group #1
+
+Callbacks:
+  - TrainEvalCallback
+  - CastToTensor
+  - Recorder
+  - ProgressCallback
+
+
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/resnet18/
+
+
+image_df_Xcol:		X_1day
+
+
+image_df_ycol:		type
+
+
+overwrite_save_directory:		False
+
+
+train_test_ratio:		0.2
+
+
+image_resize_pixels:		224
+
+
+batch_size:		32
+
+
+dataloaders:		<fastai.data.core.DataLoaders object at 0x7f9252a7fe10>
+
+
+CrossEntropyLossFlat_weights:		None
+
+
+loss_function:		None
+
+
+cnn_model:		resnet18
+
+
+learner:		<fastai.learner.Learner object at 0x7f9252815fd0>
+
+
+learning_rate:		0.0063095735386013985
+
+
+epochs:		20
+
+
+freeze_epochs:		1
+
+
+CallBack_monitor:		f1_score
+
+
+CallBack_comp:		<ufunc 'greater'>
+
+
+Learner recorder values:
+[[0.5590835213661194, 0.5664305686950684, 0.8248977065086365, 0.38421539862781545, 0.3758208517566806, 0.37413401066958046], [0.5327515602111816, 0.5822205543518066, 0.8177902102470398, 0.3821373342545981, 0.37905795927186303, 0.37712792095770814], [0.5691673159599304, 0.5328986644744873, 0.8462201356887817, 0.4500798142504716, 0.3473910225247123, 0.3345287521247912], [0.5132664442062378, 0.5556237697601318, 0.8274822235107422, 0.38088750486570655, 0.36717827626918537, 0.364793111600334], [0.5527808666229248, 0.5661788582801819, 0.8427740931510925, 0.4134066092491783, 0.35690171385358554, 0.351305629425523]]
+
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/resnet18/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		resnet18
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/resnet18/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		resnet18
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/resnet18/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		resnet18
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+
+************************************************************
+************************************************************LOG - 2025-06-27 23:43:52************************************************************
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/resnet18/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		resnet18
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+Learner Summary:
+Sequential (Input shape: 32 x 3 x 224 x 224)
+============================================================================
+Layer (type)         Output Shape         Param #    Trainable 
+============================================================================
+                     32 x 64 x 112 x 112 
+Conv2d                                    9408       False     
+BatchNorm2d                               128        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 64 x 56 x 56   
+MaxPool2d                                                      
+Conv2d                                    36864      False     
+BatchNorm2d                               128        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    36864      False     
+BatchNorm2d                               128        True      
+ReLU                                                           
+Conv2d                                    36864      False     
+BatchNorm2d                               128        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    36864      False     
+BatchNorm2d                               128        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 128 x 28 x 28  
+Conv2d                                    73728      False     
+BatchNorm2d                               256        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    147456     False     
+BatchNorm2d                               256        True      
+ReLU                                                           
+Conv2d                                    8192       False     
+BatchNorm2d                               256        True      
+Conv2d                                    147456     False     
+BatchNorm2d                               256        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    147456     False     
+BatchNorm2d                               256        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 256 x 14 x 14  
+Conv2d                                    294912     False     
+BatchNorm2d                               512        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    589824     False     
+BatchNorm2d                               512        True      
+ReLU                                                           
+Conv2d                                    32768      False     
+BatchNorm2d                               512        True      
+Conv2d                                    589824     False     
+BatchNorm2d                               512        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    589824     False     
+BatchNorm2d                               512        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 512 x 7 x 7    
+Conv2d                                    1179648    False     
+BatchNorm2d                               1024       True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    2359296    False     
+BatchNorm2d                               1024       True      
+ReLU                                                           
+Conv2d                                    131072     False     
+BatchNorm2d                               1024       True      
+Conv2d                                    2359296    False     
+BatchNorm2d                               1024       True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    2359296    False     
+BatchNorm2d                               1024       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 512 x 1 x 1    
+AdaptiveAvgPool2d                                              
+AdaptiveMaxPool2d                                              
+____________________________________________________________________________
+                     32 x 1024           
+Flatten                                                        
+BatchNorm1d                               2048       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 512            
+Linear                                    524288     True      
+ReLU                                                           
+BatchNorm1d                               1024       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 3              
+Linear                                    1536       True      
+____________________________________________________________________________
+
+Total params: 11,705,408
+Total trainable params: 538,496
+Total non-trainable params: 11,166,912
+
+Optimizer used: <function Adam at 0x79a81260a700>
+Loss function: FlattenedLoss of CrossEntropyLoss()
+
+Model frozen up to parameter group #1
+
+Callbacks:
+  - TrainEvalCallback
+  - CastToTensor
+  - Recorder
+  - ProgressCallback
+
+Final Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/resnet18/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		<fastai.data.core.DataLoaders object at 0x79a810273b50>
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		resnet18
+learner:		<fastai.learner.Learner object at 0x79a80fe22b90>
+learning_rate:		0.009120108559727669
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           Q       0.86      0.94      0.90      3917
+          QR       0.28      0.02      0.04       225
+          QX       0.31      0.21      0.25       501
+
+    accuracy                           0.82      4643
+   macro avg       0.49      0.39      0.40      4643
+weighted avg       0.78      0.82      0.79      4643
+
+
+
+
+
+
+
+************************************************************LOG - 2025-06-27 23:48:02************************************************************
+Input Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/resnet18/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		None
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		resnet18
+learner:		None
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Catagory distribution:
+type
+Q     19517
+QX     2424
+QR     1274
+Name: count, dtype: int64
+
+Learner Summary:
+Sequential (Input shape: 32 x 3 x 224 x 224)
+============================================================================
+Layer (type)         Output Shape         Param #    Trainable 
+============================================================================
+                     32 x 64 x 112 x 112 
+Conv2d                                    9408       False     
+BatchNorm2d                               128        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 64 x 56 x 56   
+MaxPool2d                                                      
+Conv2d                                    36864      False     
+BatchNorm2d                               128        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    36864      False     
+BatchNorm2d                               128        True      
+ReLU                                                           
+Conv2d                                    36864      False     
+BatchNorm2d                               128        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    36864      False     
+BatchNorm2d                               128        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 128 x 28 x 28  
+Conv2d                                    73728      False     
+BatchNorm2d                               256        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    147456     False     
+BatchNorm2d                               256        True      
+ReLU                                                           
+Conv2d                                    8192       False     
+BatchNorm2d                               256        True      
+Conv2d                                    147456     False     
+BatchNorm2d                               256        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    147456     False     
+BatchNorm2d                               256        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 256 x 14 x 14  
+Conv2d                                    294912     False     
+BatchNorm2d                               512        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    589824     False     
+BatchNorm2d                               512        True      
+ReLU                                                           
+Conv2d                                    32768      False     
+BatchNorm2d                               512        True      
+Conv2d                                    589824     False     
+BatchNorm2d                               512        True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    589824     False     
+BatchNorm2d                               512        True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 512 x 7 x 7    
+Conv2d                                    1179648    False     
+BatchNorm2d                               1024       True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    2359296    False     
+BatchNorm2d                               1024       True      
+ReLU                                                           
+Conv2d                                    131072     False     
+BatchNorm2d                               1024       True      
+Conv2d                                    2359296    False     
+BatchNorm2d                               1024       True      
+Identity                                                       
+ReLU                                                           
+Identity                                                       
+Conv2d                                    2359296    False     
+BatchNorm2d                               1024       True      
+ReLU                                                           
+____________________________________________________________________________
+                     32 x 512 x 1 x 1    
+AdaptiveAvgPool2d                                              
+AdaptiveMaxPool2d                                              
+____________________________________________________________________________
+                     32 x 1024           
+Flatten                                                        
+BatchNorm1d                               2048       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 512            
+Linear                                    524288     True      
+ReLU                                                           
+BatchNorm1d                               1024       True      
+Dropout                                                        
+____________________________________________________________________________
+                     32 x 3              
+Linear                                    1536       True      
+____________________________________________________________________________
+
+Total params: 11,705,408
+Total trainable params: 538,496
+Total non-trainable params: 11,166,912
+
+Optimizer used: <function Adam at 0x7b7f3ac427a0>
+Loss function: FlattenedLoss of CrossEntropyLoss()
+
+Model frozen up to parameter group #1
+
+Callbacks:
+  - TrainEvalCallback
+  - CastToTensor
+  - Recorder
+  - ProgressCallback
+
+Final Parameters:
+save_directory:		/content/drive/MyDrive/ThesisGD/LCsByName_F1Metric_CrossEntropLoss_3Cats/resnet18/
+image_df_Xcol:		X_1day
+image_df_ycol:		type
+overwrite_save_directory:		False
+train_test_ratio:		0.2
+image_resize_pixels:		224
+batch_size:		32
+dataloaders:		<fastai.data.core.DataLoaders object at 0x7b7f387f9e10>
+CrossEntropyLossFlat_weights:		None
+loss_function:		None
+cnn_model:		resnet18
+learner:		<fastai.learner.Learner object at 0x7b7f386803d0>
+learning_rate:		None
+epochs:		20
+freeze_epochs:		1
+CallBack_monitor:		f1_score
+CallBack_comp:		<ufunc 'greater'>
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           Q       0.86      0.94      0.90      3917
+          QR       0.28      0.02      0.04       225
+          QX       0.31      0.21      0.25       501
+
+    accuracy                           0.82      4643
+   macro avg       0.49      0.39      0.40      4643
+weighted avg       0.78      0.82      0.79      4643
+
+
+
+
+
+
